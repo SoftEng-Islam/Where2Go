@@ -5,3 +5,16 @@ Ride & Seek is a fun, traveler-friendly platform that takes the stress out of ai
 We match travelers with drivers based on arrival time and drop-off locations, calculate the optimal routes with map magic, and offer secure payments via Visa (and more). It’s like having a personal travel assistant, minus the awkward small talk.
 
 No more getting lost in translation. No more shady cab rides. Just land, scan, and go
+
+
+
+## Running The Project
+
+Run following commands to start a new demo project and run the "hello world" application
+
+```bash
+nix develop
+flutter create my_app
+cd my_app
+flutter run
+```

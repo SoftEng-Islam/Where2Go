@@ -1,5 +1,4 @@
-
-{ pkgs ? import <nixpkgs> {} }:
+{ pkgs ? import <nixpkgs> { } }:
 with pkgs;
 mkShell {
 
@@ -9,8 +8,8 @@ mkShell {
     ninja
     pkg-config
 
-    gtk3  # Curiously `nix-env -i` can't handle this one adequately.
-          # But `nix-shell` on this shell.nix does fine.
+    gtk3 # Curiously `nix-env -i` can't handle this one adequately.
+    # But `nix-shell` on this shell.nix does fine.
     pcre
     epoxy
 
@@ -22,7 +21,7 @@ mkShell {
     #   to the PKG_CONFIG_PATH environment variable
     # To add to this list on NixOS upgrades, the Nix package
     # `nix-index` is handy: then `nix-locate mount.pc`.
-    libuuid  # for mount.pc
+    libuuid # for mount.pc
     xorg.libXdmcp.dev
     python310Packages.libselinux.dev # for libselinux.pc
     libsepol.dev
@@ -39,8 +38,5 @@ mkShell {
     android-tools
   ];
 
-  LD_LIBRARY_PATH = lib.makeLibraryPath [
-    fontconfig.lib
-    sqlite.out
-  ];
+  LD_LIBRARY_PATH = lib.makeLibraryPath [ fontconfig.lib sqlite.out ];
 }
